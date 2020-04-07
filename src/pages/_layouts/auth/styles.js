@@ -44,6 +44,20 @@ export const Content = styled.div`
       }
     }
 
+    label {
+      margin: 0 0 10px;
+      text-align: left;
+      font-weight: bold;
+      opacity: 1;
+      letter-spacing: 0px;
+      color: #444444;
+    }
+
+    span {
+      color: #7d40e7;
+      align-self: flex-start;
+      margin: 0 0 10px;
+    }
     button {
       margin: 5px 0 0;
       height: 44px;
