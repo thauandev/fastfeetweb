@@ -58,8 +58,11 @@ export const Navigation = styled.div`
 export const Profile = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 
   strong {
+    display: block;
+
     font-weight: bold;
     letter-spacing: 0px;
     color: #666666;
@@ -67,6 +70,8 @@ export const Profile = styled.div`
   }
 
   button {
+    margin-top: 10px;
+    margin-bottom: 5px;
     border: 0;
     background: none;
     color: #de3b3b;
