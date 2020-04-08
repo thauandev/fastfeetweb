@@ -27,6 +27,10 @@ export const Content = styled.div`
     opacity: 1;
     margin-right: 20px;
   }
+  aside {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const Navigation = styled.div`
@@ -53,6 +57,7 @@ export const Navigation = styled.div`
 
 export const Profile = styled.div`
   display: flex;
+  flex-direction: column;
 
   strong {
     font-weight: bold;
