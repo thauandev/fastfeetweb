@@ -1,7 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function Delivery() {
-  return <h1>Encomendas</h1>;
+  return (
+    <Container>
+      <header>
+        <strong>Gerenciando encomendas</strong>
+      </header>
+    </Container>
+  );
 }

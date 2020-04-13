@@ -70,7 +70,7 @@ export const Profile = styled.div`
   }
 
   button {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 5px;
     border: 0;
     background: none;
