@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Content } from './styles';
-import Input from '~/components/Input';
+import SearchInput from '~/components/SearchInput';
 
 export default function Delivery() {
   return (
     <Container>
       <Content>
         <strong>Gerenciando encomendas</strong>
-        <Input />
+        <SearchInput />
       </Content>
     </Container>
   );
