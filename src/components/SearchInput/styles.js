@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: 35px;
+
   svg {
     float: left;
     margin: 7px 0px 0px -230px;

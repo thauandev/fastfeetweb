@@ -6,7 +6,6 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
   width: 100%;
   max-width: 1290px;
   margin-top: 35px;
@@ -17,5 +16,20 @@ export const Content = styled.div`
     letter-spacing: 0px;
     color: #444444;
     opacity: 1;
+  }
+`;
+
+export const Grid = styled.div`
+  height: 400px;
+  margin-top: 20px;
+  > section {
+    display: grid;
+
+    grid-template-columns: 0.2fr 1fr 1.2fr 1fr 1fr 1fr 1fr;
+
+    strong {
+      font-size: 16px;
+      color: #444;
+    }
   }
 `;
