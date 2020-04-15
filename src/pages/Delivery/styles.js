@@ -19,4 +19,51 @@ export const Content = styled.div`
   }
 `;
 
-export const Grid = styled.div``;
+export const Grid = styled.div`
+  margin-top: 30px;
+`;
+export const HeaderGrid = styled.div`
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 0.5fr 0.8fr 0.8fr 0.8fr 1fr 1fr 0.3fr;
+  justify-items: flex-start;
+  font-weight: bold;
+  font-size: 16px;
+  color: #444444;
+  opacity: 1;
+`;
+
+export const GridItens = styled.div`
+  display: grid;
+  width: 1290px;
+  height: 57px;
+  align-items: center;
+  grid-template-columns: 0.5fr 0.8fr 0.8fr 0.8fr 1fr 1.1fr 0.3fr;
+  justify-items: flex-start;
+  font-weight: bold;
+  font-size: 15px;
+  color: #444444;
+  margin-top: 20px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+
+  > span {
+    margin-left: 10px;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px;
+    margin-left: 25px;
+    border-radius: 12px;
+    .ball {
+      width: 8px;
+      height: 8px;
+      margin-left: 3px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+  }
+`;

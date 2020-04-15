@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Content, Grid, DeliveryItem, Status } from './styles';
+import { Container, Content, Grid, HeaderGrid, GridItens } from './styles';
 
 import SearchInput from '~/components/SearchInput';
 import Button from '~/components/Button';
@@ -58,7 +58,54 @@ export default function Delivery() {
         <strong>Gerenciando encomendas</strong>
         <SearchInput />
         <Button />
-        <Grid />
+        <Grid>
+          <HeaderGrid>
+            <smal>ID</smal>
+            <smal>Destinatário</smal>
+            <smal>Entregador</smal>
+            <smal>Cidade</smal>
+            <smal>Estado</smal>
+            <smal>Status</smal>
+            <smal>Ações</smal>
+          </HeaderGrid>
+          <div className="griditens">
+            {deliveries.map((delivery) => {
+              const status = verifyStatus(delivery);
+              return (
+                <>
+                  <GridItens>
+                    <span>#{delivery.id}</span>
+                    <span>{delivery.recipient.name}</span>
+                    <span>{delivery.deliveryman.name}</span>
+                    <span>{delivery.recipient.city}</span>
+                    <span>{delivery.recipient.state}</span>
+                    <div
+                      className="status"
+                      style={{
+                        background: status.background,
+                      }}
+                    >
+                      <span
+                        style={{
+                          background: status.text,
+                        }}
+                        className="ball"
+                      />
+                      <span
+                        style={{
+                          color: status.text,
+                        }}
+                      >
+                        <p>{status.name}</p>
+                      </span>
+                    </div>
+                    <span>...</span>
+                  </GridItens>
+                </>
+              );
+            })}
+          </div>
+        </Grid>
       </Content>
     </Container>
   );
