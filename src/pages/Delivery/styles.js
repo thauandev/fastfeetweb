@@ -19,17 +19,4 @@ export const Content = styled.div`
   }
 `;
 
-export const Grid = styled.div`
-  height: 400px;
-  margin-top: 20px;
-  > section {
-    display: grid;
-
-    grid-template-columns: 0.2fr 1fr 1.2fr 1fr 1fr 1fr 1fr;
-
-    strong {
-      font-size: 16px;
-      color: #444;
-    }
-  }
-`;
+export const Grid = styled.div``;
