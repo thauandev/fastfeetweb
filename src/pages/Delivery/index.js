@@ -16,6 +16,7 @@ import api from '~/services/api';
 
 export default function Delivery() {
   const [deliveries, setDeliveries] = useState([]);
+  const [searchProduct, setSearchProduct] = useState('');
 
   function verifyStatus(delivery) {
     const statusProps = {
@@ -49,26 +50,27 @@ export default function Delivery() {
 
   useEffect(() => {
     async function loadDeliveries() {
-      const response = await api.get('/deliveries');
+
+      const response = await api.get(`/deliveries?product=${searchProduct}`);
 
       const { data } = response;
 
       setDeliveries(data);
     }
     loadDeliveries();
-  }, []);
+  }, [searchProduct]);
 
-  function handleSearch(e) {
-    const response = api.get(`/deliveries?product=${e.target.value}`);
+      
 
-    setDeliveries(response.data);
-  }
 
   return (
     <Container>
       <Content>
         <strong>Gerenciando encomendas</strong>
-        <SearchInput onChange={handleSearch} />
+
+        <SearchInput onChange={(e) => setSearchProduct(e.target.value)} />
+
+
         <Button />
 
         <Grid>
@@ -90,10 +92,10 @@ export default function Delivery() {
                     <span>#{delivery.id}</span>
                     <span>{delivery.recipient.name}</span>
                     <DeliveryMan>
-                      <img
+                      {/* <img
                         src={delivery.deliveryman.avatar.url}
                         alt={delivery.deliveryman.avatar.name}
-                      />
+                      /> */}
                       <span>{delivery.deliveryman.name}</span>
                     </DeliveryMan>
 
