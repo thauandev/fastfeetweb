@@ -48,11 +48,7 @@ export default function Delivery() {
   }
 
   async function handleSearch(e) {
-    const response = await api.get('/deliveries', {
-      params: {
-        q: e.target.value,
-      },
-    });
+    const response = await api.get(`/deliveries?product=${e.target.value}`);
     const { data } = response;
 
     setDeliveries(data);
