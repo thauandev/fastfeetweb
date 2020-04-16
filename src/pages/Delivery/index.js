@@ -47,31 +47,30 @@ export default function Delivery() {
     return statusProps;
   }
 
-  async function handleSearch(e) {
-    const response = api.get(`/deliveries?product=${e.target.value}`);
-    const { data } = response;
-
-    setDeliveries(data);
-  }
-
-  async function loadDeliveries() {
-    const response = await api.get('/deliveries');
-
-    const { data } = response;
-
-    setDeliveries(data);
-  }
-
   useEffect(() => {
+    async function loadDeliveries() {
+      const response = await api.get('/deliveries');
+
+      const { data } = response;
+
+      setDeliveries(data);
+    }
     loadDeliveries();
-  });
+  }, []);
+
+  function handleSearch(e) {
+    const response = api.get(`/deliveries?product=${e.target.value}`);
+
+    setDeliveries(response.data);
+  }
 
   return (
     <Container>
       <Content>
         <strong>Gerenciando encomendas</strong>
-        <SearchInput onChange={handleSearch} type="text" />
-        <Button type="button" />
+        <SearchInput onChange={handleSearch} />
+        <Button />
+
         <Grid>
           <HeaderGrid>
             <smal>ID</smal>
