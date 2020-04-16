@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Content, Grid, HeaderGrid, GridItens } from './styles';
+import {
+  Container,
+  Content,
+  Grid,
+  HeaderGrid,
+  GridItens,
+  DeliveryMan,
+} from './styles';
 
 import SearchInput from '~/components/SearchInput';
 import Button from '~/components/Button';
@@ -76,7 +83,14 @@ export default function Delivery() {
                   <GridItens>
                     <span>#{delivery.id}</span>
                     <span>{delivery.recipient.name}</span>
-                    <span>{delivery.deliveryman.name}</span>
+                    <DeliveryMan>
+                      <img
+                        src={delivery.deliveryman.avatar.url}
+                        alt={delivery.deliveryman.avatar.name}
+                      />
+                      <span>{delivery.deliveryman.name}</span>
+                    </DeliveryMan>
+
                     <span>{delivery.recipient.city}</span>
                     <span>{delivery.recipient.state}</span>
                     <div

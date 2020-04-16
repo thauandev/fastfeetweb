@@ -42,14 +42,15 @@ export const GridItens = styled.div`
   justify-items: flex-start;
   font-weight: bold;
   font-size: 15px;
-  color: #444444;
+  color: #666666;
+  opacity: 1;
   margin-top: 20px;
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 4px;
   opacity: 1;
 
   > span {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
   .status {
@@ -65,5 +66,18 @@ export const GridItens = styled.div`
       margin-right: 5px;
       border-radius: 50%;
     }
+  }
+`;
+
+export const DeliveryMan = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+  }
+  span {
+    margin-left: 5px;
   }
 `;
