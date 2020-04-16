@@ -47,6 +47,17 @@ export default function Delivery() {
     return statusProps;
   }
 
+  async function handleSearch(e) {
+    const response = await api.get('/deliveries', {
+      params: {
+        q: e.target.value,
+      },
+    });
+    const { data } = response;
+
+    setDeliveries(data);
+  }
+
   async function loadDeliveries() {
     const response = await api.get('/deliveries');
 
@@ -63,7 +74,7 @@ export default function Delivery() {
     <Container>
       <Content>
         <strong>Gerenciando encomendas</strong>
-        <SearchInput />
+        <SearchInput onChange={handleSearch} type="text" />
         <Button />
         <Grid>
           <HeaderGrid>
@@ -80,7 +91,7 @@ export default function Delivery() {
               const status = verifyStatus(delivery);
               return (
                 <>
-                  <GridItens>
+                  <GridItens key={delivery.id}>
                     <span>#{delivery.id}</span>
                     <span>{delivery.recipient.name}</span>
                     <DeliveryMan>
