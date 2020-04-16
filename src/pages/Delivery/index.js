@@ -50,6 +50,7 @@ export default function Delivery() {
 
   useEffect(() => {
     async function loadDeliveries() {
+
       const response = await api.get(`/deliveries?product=${searchProduct}`);
 
       const { data } = response;
@@ -59,12 +60,19 @@ export default function Delivery() {
     loadDeliveries();
   }, [searchProduct]);
 
+      
+
+
   return (
     <Container>
       <Content>
         <strong>Gerenciando encomendas</strong>
+
         <SearchInput onChange={(e) => setSearchProduct(e.target.value)} />
+
+
         <Button />
+
         <Grid>
           <HeaderGrid>
             <smal>ID</smal>
@@ -75,7 +83,7 @@ export default function Delivery() {
             <smal>Status</smal>
             <smal>Ações</smal>
           </HeaderGrid>
-          <div className="griditens">
+          <div>
             {deliveries.map((delivery) => {
               const status = verifyStatus(delivery);
               return (
