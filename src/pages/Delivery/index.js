@@ -66,7 +66,7 @@ export default function Delivery() {
 
         <SearchInput onChange={(e) => setSearchProduct(e.target.value)} />
 
-        <Button to="/delivery/form" />
+        <Button link="/delivery/form" />
 
         <Grid>
           <HeaderGrid>
@@ -87,10 +87,10 @@ export default function Delivery() {
                     <span>#{delivery.id}</span>
                     <span>{delivery.recipient.name}</span>
                     <DeliveryMan>
-                      {/* <img
+                      <img
                         src={delivery.deliveryman.avatar.url}
                         alt={delivery.deliveryman.avatar.name}
-                      /> */}
+                      />
                       <span>{delivery.deliveryman.name}</span>
                     </DeliveryMan>
 
