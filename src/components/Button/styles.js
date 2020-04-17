@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-end;
 
-  button {
+  a {
     display: flex;
     align-items: center;
     width: 142px;

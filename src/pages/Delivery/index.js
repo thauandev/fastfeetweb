@@ -50,7 +50,6 @@ export default function Delivery() {
 
   useEffect(() => {
     async function loadDeliveries() {
-
       const response = await api.get(`/deliveries?product=${searchProduct}`);
 
       const { data } = response;
@@ -60,9 +59,6 @@ export default function Delivery() {
     loadDeliveries();
   }, [searchProduct]);
 
-      
-
-
   return (
     <Container>
       <Content>
@@ -70,8 +66,7 @@ export default function Delivery() {
 
         <SearchInput onChange={(e) => setSearchProduct(e.target.value)} />
 
-
-        <Button />
+        <Button to="/delivery/form" />
 
         <Grid>
           <HeaderGrid>
