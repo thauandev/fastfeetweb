@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { Container } from './styles';
+import RegisterDelivery from '~/components/RegisterDelivery';
+
+import { Container, Content, FormDelivery } from './styles';
 
 export default function Form() {
   return (
     <Container>
-      <h1>TESTE</h1>
+      <Content>
+        <RegisterDelivery content="Cadastro de encomendas" backLink="/" />
+        <FormDelivery> </FormDelivery>
+      </Content>
     </Container>
   );
 }
